@@ -1,8 +1,8 @@
-"""write model User and UserLog
+"""change field date in model UserLog
 
-Revision ID: 234ffb1242f9
+Revision ID: b01ceb79dcc6
 Revises: 
-Create Date: 2023-10-17 12:47:50.180384
+Create Date: 2023-10-17 13:25:51.590598
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '234ffb1242f9'
+revision: str = 'b01ceb79dcc6'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None

@@ -1,8 +1,7 @@
 from sqlalchemy import String, DateTime, BINARY, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from pydantic import EmailStr
 from databse import Base
-from typing import List
+from datetime import datetime
 
 
 class User(Base):
@@ -32,7 +31,7 @@ class UserLog(Base):
     __tablename__ = "users_logs"
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True, index=True)
-    date: Mapped[DateTime] = mapped_column(DateTime)
+    date: Mapped[DateTime] = mapped_column(DateTime,default=datetime.utcnow)
     user_id : Mapped[int] = mapped_column(ForeignKey("users.id"))
 
     user = relationship(argument="User", back_populates="logs")
